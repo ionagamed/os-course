@@ -1,0 +1,16 @@
+ 3749* ssh git.stride.one
+ 3751  scp osc-1.edu.innopolis.ru
+ 3752  scp l.lygin@osc-1.edu.innopolis.ru:~/week1 .
+ 3753  cd projects/os-course
+ 3757  cd ..
+ 3758  git init
+ 3759  git remote add origin git@github.com:ionagamed/os-course.git
+ 3760  cd week1
+ 3761  ls
+ 3762  rm main
+ 3763  vim main.c
+ 3764  gcc -o ex4 main.c
+ 3765  find /usr/bin/ -regex ".*gcc.*" | sort -r
+ 3766  find /usr/bin -regex ".*gcc.*" | sort -r
+ 3767  find /usr/bin -regex ".*gcc.*" | sort -r > ex1.txt
+ 3768  history
