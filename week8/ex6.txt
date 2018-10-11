@@ -1,0 +1,13 @@
+Page size = 8K
+Byte offset bits = 13 bits
+Virtual address size = 16 bits
+
+/---------------------------------\
+| <------- 16 bits total -------> |
+|  num |       Byte offset        |
+| x x x x x x x x x x x x x x x x |
+\---------------------------------/
+
+16 - 13 = 3 bits for the page number, thus 8 entries in the page table.
+
+Answer: 8 entries

@@ -1,0 +1,22 @@
+# Difference between physical and virual addresses
+
+**Physical address**:
+  - Always resembles the actual structure of memory.
+  - Thus, the amount of physical addresses is __always__
+    equal to the actual memory size
+  - Different processes should use different physical 
+    addresses, as they would intersect otherwise
+    
+**Virtual address**:
+  - Doesn't neccessarily resemble the actual structure
+  - Thus, the amount of addresses __may not be equal__
+    to the memory size
+  - Different processes __could__ both have a byte with
+    address 0x40 (example), because it would be mapped
+    in the MMU to different physical addresses
+  - Allows "overbooking" the RAM - e.g. when two
+    processes A and B require 10G and 15G respectively,
+    while using only 3G and 5G, system can allocate them
+    memory on a machine with only 8G of RAM (thus
+    freeing the program from manually allocating
+    "just enough memory")
