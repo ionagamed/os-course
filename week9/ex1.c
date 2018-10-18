@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct {
     int page_number;
@@ -82,9 +83,13 @@ void print_perf_ratio(const ageing_pager_t * pager) {
     printf("hit: %d (%f%%), miss: %d (%f%%), hit/miss: %f", p.hits, (float) p.hits / total * 100, p.misses, (float) p.misses / total * 100, (float) p.hits / p.misses);
 }
 
-int main() {
-    uint32_t page_amount;
-    scanf("%u", &page_amount);
+int main(int argc, char ** argv) {
+    if (argc < 2) {
+        printf("Usage: %s <amount of frames>\n", argv[0]);
+        return -1;
+    }
+
+    uint32_t page_amount = atoi(argv[1]);
     ageing_pager_t * pager = create_ageing_pager(page_amount);
     int page_reference;
     while (scanf("%d", &page_reference) != 0) {
