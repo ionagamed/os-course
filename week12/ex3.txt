@@ -1,0 +1,25 @@
+First run:
+
+$ time ./copy ~/Downloads/BinaryNinja-demo.dmg /tmp/bn2.dmg
+0.02s user 0.17s system 67% cpu 0.282 total
+
+BUF_SIZE=2048
+
+$ time ./copy ~/Downloads/BinaryNinja-demo.dmg /tmp/bn2.dmg  
+0.01s user 0.09s system 59% cpu 0.172 total
+
+BUF_SIZE=128
+
+$ time ./copy ~/Downloads/BinaryNinja-demo.dmg /tmp/bn2.dmg  
+0.17s user 0.90s system 92% cpu 1.157 total
+
+BUF_SIZE=2048; SYNC
+
+$ time ./copy ~/Downloads/BinaryNinja-demo.dmg /tmp/bn2.dmg  
+0.02s user 0.50s system 57% cpu 0.908 total
+
+these results show that
+  * increasing buffer size reduces bus aquisitions, thus
+    increasing performance
+  * sync flag increases wait time, because it waits for the last
+    operation to finish
