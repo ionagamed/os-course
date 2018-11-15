@@ -1,0 +1,4 @@
+deadlock is detected, processes are
+1
+3
+4
